@@ -4,9 +4,11 @@ import com.colegio.spring.modelo.entidades.Carrera;
 
 import java.util.Optional;
 
-public interface CarreraDAO {
-    Optional<Carrera> findByid(Integer id);
-    Carrera save(Carrera carrera);
-    Iterable<Carrera> findAll();
-    void deleteByid(Integer id);
+public interface CarreraDAO extends GenericoDAO<Carrera>{
+
+    Iterable<Carrera>findCarrerasByNombreContains(String nombre);
+
+    Iterable<Carrera>findCarrerasByNombreContainsIgnoreCase(String nombre);
+
+    Iterable<Carrera>findCarrerasByCantidadAniosAfter(Integer cantidadAnios);
 }

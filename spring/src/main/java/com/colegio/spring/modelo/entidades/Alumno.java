@@ -8,11 +8,12 @@ import javax.persistence.*;
 public class Alumno extends Persona{
     @ManyToOne(
             optional = true,
+            fetch=FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
-            },
-            fetch=FetchType.LAZY
+            }
+
     )
     @JoinColumn(name="carrea_id")
     private Carrera carrera;
