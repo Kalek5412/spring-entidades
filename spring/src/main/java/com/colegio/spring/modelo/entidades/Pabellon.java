@@ -94,10 +94,12 @@ public class Pabellon implements Serializable {
     }
 
     public Set<Aula> getAulas() {
+
         return aulas;
     }
 
     public void setAulas(Set<Aula> aulas) {
+
         this.aulas = aulas;
     }
     @PrePersist

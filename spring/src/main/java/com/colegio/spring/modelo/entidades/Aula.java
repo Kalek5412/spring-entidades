@@ -90,11 +90,11 @@ public class Aula implements Serializable {
         this.pabellon = pabellon;
     }
     @PrePersist
-    public void antesPersistir(){
+    private void antesPersistir(){
         this.fechaAlta=LocalDateTime.now();
     }
     @PreUpdate
-    public void antesDeUpdate(){
+    private void antesDeUpdate(){
         this.fechaModificacion=LocalDateTime.now();
     }
 
