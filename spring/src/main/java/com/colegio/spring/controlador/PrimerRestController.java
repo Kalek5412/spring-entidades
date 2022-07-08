@@ -1,5 +1,7 @@
 package com.colegio.spring.controlador;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/restapi")
 public class PrimerRestController {
-    @GetMapping
-    public String holaMundo(){
-        return "hola mundo sirngggggggg";
+    @GetMapping("/hola-mundo")
+    public ResponseEntity<String> holaMundo(){
+        return new ResponseEntity<>("hola mundo sirngggggggg", HttpStatus.ACCEPTED);
     }
 }
